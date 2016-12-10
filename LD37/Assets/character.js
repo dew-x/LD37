@@ -12,16 +12,16 @@ function Update () {
 	var x = 0;
 	var y = 0;
 	if (Input.GetKey("a")) {
-		y += 1;
+		x -= 1;
 	}
 	if (Input.GetKey("d")) {
-		y -= 1;
-	}
-	if (Input.GetKey("w")) {
 		x += 1;
 	}
+	if (Input.GetKey("w")) {
+		y += 1;
+	}
 	if (Input.GetKey("s")) {
-		x -= 1;
+		y -= 1;
 	}
 	if (Input.GetKeyDown("space")) {
 		rb.AddForce(0,4000,0);
