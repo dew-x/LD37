@@ -1,12 +1,11 @@
 ﻿#pragma strict
 
 var character : GameObject;
-var camera : Camera;
+var cam : Camera;
 
 function Start () {
-	
+
 }
 
 function Update () {
-
 }

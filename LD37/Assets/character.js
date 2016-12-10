@@ -12,19 +12,19 @@ function Update () {
 	var x = 0;
 	var y = 0;
 	if (Input.GetKey("a")) {
-		x -= 1;
-	}
-	if (Input.GetKey("d")) {
-		x += 1;
-	}
-	if (Input.GetKey("w")) {
 		y += 1;
 	}
 	if (Input.GetKey("d")) {
 		y -= 1;
 	}
+	if (Input.GetKey("w")) {
+		x += 1;
+	}
+	if (Input.GetKey("s")) {
+		x -= 1;
+	}
 	if (Input.GetKeyDown("space")) {
-		rb.AddForce(0,5000,0);
+		rb.AddForce(0,4000,0);
 	}
 	rb.AddForce(x*100,0,y*100);
 

@@ -7,5 +7,5 @@ function Start () {
 }
 
 function Update () {
-	room.transform.Rotate(Vector3.right,0.2);
+	room.transform.Rotate(Vector3.up,0.2);
 }
