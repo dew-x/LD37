@@ -24,9 +24,9 @@ function Update () {
 		y -= 1;
 	}
 	if (Input.GetKeyDown("space")) {
-		rb.AddForce(0,4000,0);
+		rb.AddForce(0,2000,0);
 	}
-	rb.AddForce(x*100,0,y*100);
+	rb.AddForce(x*50,0,y*50);
 
-	rb.AddForce(rb.velocity*-0.01);
+	rb.AddForce(rb.velocity*-0.05);
 }
