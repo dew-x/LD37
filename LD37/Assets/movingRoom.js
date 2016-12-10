@@ -9,3 +9,9 @@ function Start () {
 function Update () {
 	room.transform.Rotate(Vector3.up,0.2);
 }
+
+function OnCollisionEnter(collision: Collision) {
+	if (collision.gameObject.name=="Character") {
+		Application.LoadLevel("main");
+	}
+}
