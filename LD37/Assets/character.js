@@ -26,15 +26,15 @@ function Update () {
 		y -= 1;
 	}
 	if (Input.GetKeyDown("space") && canJump>0) {
-		rb.AddForce(0,2000,0);
+		rb.AddForce(0,3000,0);
 		canJump = -100;
 	}
-	rb.AddForce((x*100)/Mathf.Max(1.0,Mathf.Abs(rb.velocity.x)),0,(y*100)/Mathf.Max(1.0,Mathf.Abs(rb.velocity.y)));
+	rb.AddForce((x*150)/Mathf.Max(1.0,rb.velocity.x*rb.velocity.x),0,(y*150)/Mathf.Max(1.0,rb.velocity.y*rb.velocity.y));
 
 	rb.AddForce(rb.velocity*-0.05);
 	++canJump;
 }
 
 function OnCollisionStay(){
-   if (canJump<-85) canJump=0;
+   if (canJump<-95) canJump=0;
 }
