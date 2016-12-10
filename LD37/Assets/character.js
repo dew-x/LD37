@@ -29,12 +29,12 @@ function Update () {
 		rb.AddForce(0,2000,0);
 		canJump = -100;
 	}
-	rb.AddForce(x*50,0,y*50);
+	rb.AddForce((x*100)/Mathf.Max(1.0,Mathf.Abs(rb.velocity.x)),0,(y*100)/Mathf.Max(1.0,Mathf.Abs(rb.velocity.y)));
 
 	rb.AddForce(rb.velocity*-0.05);
 	++canJump;
 }
 
 function OnCollisionStay(){
-   if (canJump>-80) canJump=0;
+   if (canJump<-85) canJump=0;
 }
