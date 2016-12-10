@@ -12,6 +12,6 @@ function Update () {
 
 function OnCollisionEnter(collision: Collision) {
 	if (collision.gameObject.name=="Character") {
-		Application.LoadLevel("main");
+		 UnityEngine.SceneManagement.SceneManager.LoadScene("main", UnityEngine.SceneManagement.LoadSceneMode.Single);
 	}
 }
