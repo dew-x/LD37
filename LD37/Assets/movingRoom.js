@@ -3,7 +3,7 @@
 var room : GameObject;
 
 function Start () {
-    Debug.Log(room);
+    
 }
 
 function Update () {
