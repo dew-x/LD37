@@ -36,5 +36,5 @@ function Update () {
 }
 
 function OnCollisionStay(){
-   if (canJump<-95) canJump=0;
+   if (canJump<-90) canJump=0;
 }
