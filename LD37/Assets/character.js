@@ -1,9 +1,11 @@
 ﻿#pragma strict
 
 var character : GameObject;
+var rb : Rigidbody;
 
 function Start () {
-
+	Physics.gravity = Vector3(0,-100,0);
+	rb = character.GetComponent.<Rigidbody>();
 }
 
 function Update () {
@@ -22,7 +24,9 @@ function Update () {
 		y -= 1;
 	}
 	if (Input.GetKeyDown("space")) {
-		character.GetComponent.<Rigidbody>().AddForce(0,2000,0);
+		rb.AddForce(0,5000,0);
 	}
-	character.GetComponent.<Rigidbody>().AddForce(x*100,0,y*100);
+	rb.AddForce(x*100,0,y*100);
+
+	rb.AddForce(rb.velocity*-0.01);
 }
