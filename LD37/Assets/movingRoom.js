@@ -7,7 +7,11 @@ function Start () {
 }
 
 function Update () {
-	room.transform.Rotate(Vector3.up,0.2);
+	if (scoreManager.time>2) {
+		room.transform.Rotate(Vector3.up,scoreManager.time/20);
+	} else if (scoreManager.time>0) {
+		room.transform.Rotate(Vector3.up,Mathf.Sin(scoreManager.time*20)/2);
+	}
 }
 
 function OnCollisionEnter(collision: Collision) {
