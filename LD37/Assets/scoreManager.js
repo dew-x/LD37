@@ -2,6 +2,7 @@
 
 var myStyle : GUIStyle;
 var wasdImage : Texture2D;
+var spacebarImage : Texture2D;
 
 static var time : float;
 private var timer2 : float;
@@ -19,6 +20,7 @@ function OnGUI()
  	if(tutorial == true)
  	{
  		GUI.Label (Rect (Screen.width/2-100, Screen.height/2-50, 500, 100), wasdImage);
+ 		GUI.Label (Rect (Screen.width/2-100, Screen.height/2+50, 400, 80), spacebarImage);
  	}
 }
 
