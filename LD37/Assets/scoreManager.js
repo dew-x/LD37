@@ -21,7 +21,7 @@ function OnGUI()
  	GUI.Label (Rect (10, 10, 100, 20), time.ToString(), myStyle);
 
  	var textMesh = timeText.GetComponent.<TextMesh>();
-    var meshRenderer = timeText.AddComponent.<MeshRenderer>();
+    //var meshRenderer = timeText.AddComponent.<MeshRenderer>();
  	textMesh.text = String.Format("{0:00}:{1:00}", time / 60, time % 60);
 
  	if(tutorial == true)
@@ -46,8 +46,14 @@ function Update () {
 }
 
 function TimerStart(){
-	 
-	 time = Time.timeSinceLevelLoad - timer2;  //Set time
+
+	if(deathScreen.dead == false){
+		time = Time.timeSinceLevelLoad - timer2;  //Set time
+	}
+	else
+	{
+		
+	}
  
  }
 

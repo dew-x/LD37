@@ -17,8 +17,11 @@ function Update () {
 function OnCollisionEnter(collision: Collision) {
 	if (collision.gameObject.name=="animacio") {
 		for (var contact : ContactPoint in collision.contacts) {
-			if (Mathf.Abs(contact.normal.z)<0.01) {
-				UnityEngine.SceneManagement.SceneManager.LoadScene("main", UnityEngine.SceneManagement.LoadSceneMode.Single);
+			if (Mathf.Abs(contact.normal.z)<0.01 && contact.normal.y < 0) {
+				deathScreen.DeathScreenFunction();
+				if(deathScreen.dead == false){
+					UnityEngine.SceneManagement.SceneManager.LoadScene("main", UnityEngine.SceneManagement.LoadSceneMode.Single);
+				}
 			}
 		}
 	}
@@ -26,8 +29,11 @@ function OnCollisionEnter(collision: Collision) {
 function OnCollisionStay(collision: Collision) {
 	if (collision.gameObject.name=="animacio") {
 		for (var contact : ContactPoint in collision.contacts) {
-			if (Mathf.Abs(contact.normal.z)<0.01) {
-				UnityEngine.SceneManagement.SceneManager.LoadScene("main", UnityEngine.SceneManagement.LoadSceneMode.Single);
+			if (Mathf.Abs(contact.normal.z)<0.01 && contact.normal.y < 0) {
+				deathScreen.DeathScreenFunction();
+				if(deathScreen.dead == false){
+					UnityEngine.SceneManagement.SceneManager.LoadScene("main", UnityEngine.SceneManagement.LoadSceneMode.Single);
+				}
 			}
 		}
 	}
