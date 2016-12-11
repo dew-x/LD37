@@ -2,12 +2,12 @@
 
 var character : GameObject;
 var shadow : GameObject;
-var rb : Rigidbody;
+private var rb : Rigidbody;
 var canJump : int;
 
 function Start () {
 	Physics.gravity = Vector3(0,-100,0);
-	rb = character.GetComponent.<Rigidbody>();
+	rb = GetComponent.<Rigidbody>();
 	canJump = 0;
 }
 
