@@ -3,8 +3,8 @@
 var myStyle : GUIStyle;
 var wasdImage : Texture2D;
 
-static var time : int;
-private var timer2 : int;
+static var time : float;
+private var timer2 : float;
 private var tutorial : boolean;
 
 function Start () {
