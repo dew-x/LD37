@@ -1,6 +1,7 @@
 ﻿#pragma strict
 
 var character : GameObject;
+var shadow : GameObject;
 var rb : Rigidbody;
 var canJump : int;
 
@@ -33,6 +34,7 @@ function Update () {
 
 	rb.AddForce(rb.velocity*-0.05);
 	++canJump;
+	shadow.transform.position = character.transform.position + Vector3(0,-1,0);
 }
 
 function OnCollisionStay(){
