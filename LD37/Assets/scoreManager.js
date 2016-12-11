@@ -2,10 +2,12 @@
 
 var myStyle: GUIStyle;
 
-var timer1:int;
+private var timer1:int;
 
 function Start () {
-	
+
+	timer1 = 0;
+
 }
 
 function OnGUI()
@@ -21,7 +23,7 @@ function Update () {
 
 function TimerStart(){
 	 
-	 timer1 = Time.time;  //Set time
+	 timer1 = Time.timeSinceLevelLoad;  //Set time
 
 	 Debug.Log(timer1);
  
