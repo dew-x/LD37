@@ -14,23 +14,29 @@ function Start () {
 function Update () {
 	var x = 0;
 	var y = 0;
-	if (Input.GetKey("a")) {
+	if (Input.GetKey("a") || Input.GetKey("left")) {
 		x -= 1;
 	}
-	if (Input.GetKey("d")) {
+	if (Input.GetKey("d") || Input.GetKey("right")) {
 		x += 1;
 	}
-	if (Input.GetKey("w")) {
+	if (Input.GetKey("w") || Input.GetKey("up")) {
 		y += 1;
 	}
-	if (Input.GetKey("s")) {
+	if (Input.GetKey("s") || Input.GetKey("down")) {
 		y -= 1;
 	}
 	if (Input.GetKeyDown("space") && canJump>0) {
 		rb.AddForce(0,3000,0);
 		canJump = -100;
 	}
-	rb.AddForce((x*150)/Mathf.Max(1.0,rb.velocity.x*rb.velocity.x),0,(y*150)/Mathf.Max(1.0,rb.velocity.y*rb.velocity.y));
+	var vx = rb.velocity.x;
+	var vy = rb.velocity.z;
+	var fx = (x*500);
+	var fy = (y*500);
+	if (Mathf.Sign(fx)==Mathf.Sign(vx)) fx = fx/Mathf.Max(1.0,vx*vx);
+	if (Mathf.Sign(fy)==Mathf.Sign(vy)) fy = fy/Mathf.Max(1.0,vy*vy);
+	rb.AddForce(fx,0,fy);
 
 	rb.AddForce(rb.velocity*-0.05);
 	++canJump;
