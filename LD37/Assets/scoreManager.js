@@ -47,7 +47,7 @@ function Update () {
 
 function TimerStart(){
 
-	if(deathScreen.dead == false){
+	if(movingRoom.alive == true){
 		time = Time.timeSinceLevelLoad - timer2;  //Set time
 	}
 	else
