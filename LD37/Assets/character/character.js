@@ -41,7 +41,7 @@ function Update () {
 			y -= 1;
 		}
 		if (Input.GetKeyDown("space") && blockJump<=0 && faseJump>=0) {
-			rb.AddForce(0,3000*fix,0);
+			rb.AddForce(0,1000+2000*fix,0);
 			blockJump = 60;
 			++faseJump;
 			anim.Play("JUMP",Animator.StringToHash("layer"));
