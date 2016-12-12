@@ -8,9 +8,9 @@ function Start () {
 
 function Update () {
 	if (main.timer>2) {
-		room.transform.Rotate(Vector3.up,main.timer/20*Time.timeScale);
+		room.transform.Rotate(Vector3.up,main.timer/20*Time.timeScale*Time.deltaTime*60);
 	} else if (main.timer>0) {
-		room.transform.Rotate(Vector3.up,Mathf.Sin(main.timer*20)/2*Time.timeScale);
+		room.transform.Rotate(Vector3.up,Mathf.Sin(main.timer*20)/2*Time.timeScale*Time.deltaTime*60);
 	}
 }
 

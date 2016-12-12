@@ -21,9 +21,9 @@ function Update () {
 	if (main.mode=="GAME") {
 		if (Time.timeScale>0.1) {
 			if (rb.velocity.y<-1) {
-				Time.timeScale = 0.7;
+				Time.timeScale = main.ts*0.7;
 			} else {
-				Time.timeScale = 1;
+				Time.timeScale = main.ts;
 			}
 		}
 		var x = 0;
@@ -52,9 +52,9 @@ function Update () {
 		var fy = (y*800);
 		if (Mathf.Sign(fx)==Mathf.Sign(vx)) fx = fx/Mathf.Max(1.0,vx*vx);
 		if (Mathf.Sign(fy)==Mathf.Sign(vy)) fy = fy/Mathf.Max(1.0,vy*vy);
-		rb.AddForce(fx*fix,0,fy*fix);
+		rb.AddForce(fx*fix*Time.deltaTime*60,0,fy*fix*Time.deltaTime*60);
 
-		rb.AddForce(rb.velocity*-0.05);
+		rb.AddForce(rb.velocity*-0.05*Time.deltaTime*60);
 		--blockJump;
 	}
 	shadow.transform.position = character.transform.position + Vector3(0,-1,0);

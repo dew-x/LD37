@@ -9,6 +9,7 @@ static var deathTime : float;
 static var timer : float;
 static var mode : String = "SPLASH";
 static var canUpload : boolean;
+static var ts : float;
 var ready = 0;
 
 var menuSong : AudioClip;
@@ -23,7 +24,7 @@ function Start () {
 	timer = 0;
 	ready = 0;
 	canUpload = true;
-
+	ts = Time.timeScale;
 	var audio: AudioSource = GetComponent.<AudioSource>();
 	GetComponent.<AudioSource>().clip = menuSong;
 	GetComponent.<AudioSource>().Play();
@@ -51,7 +52,7 @@ function Update () {
 		timer = Time.unscaledTime - gameTime;
 		if (Time.unscaledTime - main.deathTime > 3) {
 			mode = "HIGHSCORES";
-			Time.timeScale = 1;
+			Time.timeScale = ts;
 		}
 	} else if (mode=="HIGHSCORES") {
 		timer = Time.unscaledTime - gameTime;
