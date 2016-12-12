@@ -72,17 +72,17 @@ function OnGUI()
  		nick = GUI.TextField(Rect(xs+ws*0.085,Screen.height*0.61,ws*0.3,Screen.height*0.04),nick,12,nickStyle);
  		if (main.canUpload==true) { 
 	 		if (nick!="") {
-	 			if (GUI.Button(Rect (xs+ws*0.75, Screen.height*0.61, ws*0.2, Screen.height*0.1), submitButton1,submitStyle)) {
+	 			if (GUI.Button(Rect (xs+ws*0.725, Screen.height*0.61, ws*0.22, Screen.height*0.12), submitButton1,submitStyle)) {
 		 			todo = true;
 					www = new WWW("http://fmv.oqstats.net/g.php?nick="+nick+"&score="+main.scoreTime);
 					main.canUpload = false;
 		 		}
 	 		} else {
-	 			GUI.Label (Rect (xs+ws*0.75, Screen.height*0.61, ws*0.2, Screen.height*0.1), submitButton, submitStyle);
+	 			GUI.Label (Rect (xs+ws*0.725, Screen.height*0.61, ws*0.22, Screen.height*0.12), submitButton, submitStyle);
 	 		}
 	 	}
  		GUI.Label(Rect(xs+ws*0.72, Screen.height*0.19, ws*0.40, Screen.height*0.1), main.scoreTime.ToString("F3"),maxiStyle);
- 		GUI.Label(Rect(xs+ws*0.64, Screen.height*0.618, ws*0.20, Screen.height*0.05),main.scoreTime.ToString("F3"),miniStyle);
+ 		GUI.Label(Rect(xs+ws*0.575, Screen.height*0.615, ws*0.20, Screen.height*0.05),main.scoreTime.ToString("F3"),miniStyle);
  		if (data!="") {
  			var lines:String[] = data.Split("\n"[0]);
  			for (var i:int=0; i<lines.Length; ++i) {
