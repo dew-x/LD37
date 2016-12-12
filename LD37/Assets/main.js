@@ -8,6 +8,7 @@ static var scoreTime : float;
 static var deathTime : float;
 static var timer : float;
 static var mode : String = "SPLASH";
+static var canUpload : boolean;
 var ready = 0;
 
 function Start () {
@@ -18,6 +19,7 @@ function Start () {
 	scoreTime = 0;
 	timer = 0;
 	ready = 0;
+	canUpload = true;
 }
 
 function Update () {
