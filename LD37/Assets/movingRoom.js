@@ -18,7 +18,7 @@ function OnCollisionEnter(collision: Collision) {
 	if (main.mode=="GAME") {
 		if (collision.gameObject.name=="animacio") {
 			for (var contact : ContactPoint in collision.contacts) {
-				if (Mathf.Abs(contact.normal.z)<0.01 && contact.normal.y < 0) {
+				if (contact.normal.z>-0.1 && contact.normal.y < 0) {
 					main.die();
 				}
 			}
@@ -29,7 +29,7 @@ function OnCollisionStay(collision: Collision) {
 	if (main.mode=="GAME") {
 		if (collision.gameObject.name=="animacio") {
 			for (var contact : ContactPoint in collision.contacts) {
-				if (Mathf.Abs(contact.normal.z)<0.01 && contact.normal.y < 0) {
+				if (contact.normal.z>-0.1 && contact.normal.y < 0) {
 					main.die();
 				}
 			}
