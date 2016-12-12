@@ -44,10 +44,6 @@ function Update () {
 		}
 	} else if (mode=="HIGHSCORES") {
 		timer = Time.unscaledTime - gameTime;
-		if (Input.anyKey) {
-			mode="TUTORIAL";
-			UnityEngine.SceneManagement.SceneManager.LoadScene("main", UnityEngine.SceneManagement.LoadSceneMode.Single);
-		}
 	}
 }
 
