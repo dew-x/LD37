@@ -17,7 +17,7 @@ function OnGUI()
 	{
 		if (lastScore == true)
 		{
-			score = scoreManager.time;
+			score = main.scoreTime;
 			lastScore = false;
 		}
 		GUI.Label (Rect (Screen.width/8, Screen.height/6, 500, 100),"Your score is: " + score.ToString(), myScoreStyle);
@@ -26,14 +26,4 @@ function OnGUI()
 
 function Update () {
 	
-}
-
-static function DeathScreenFunction()
-{
-	dead = true;
-	Debug.Log("Muerto Bro");
-	if(Input.anyKeyDown)
-	{
-		dead = false;
-	}
 }
