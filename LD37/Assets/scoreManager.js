@@ -2,9 +2,8 @@
 
 var timeText : GameObject;
 
-var wasdImage : Texture2D;
+var tutorialImage : Texture2D;
 var splashImage : Texture2D;
-var spacebarImage : Texture2D;
 
 function Start () 
 {
@@ -17,8 +16,10 @@ function OnGUI()
 
  	if(main.mode=="TUTORIAL")
  	{
- 		GUI.Label (Rect (Screen.width/2-100, Screen.height/2-50, 500, 100), wasdImage);
- 		GUI.Label (Rect (Screen.width/2-100, Screen.height/2+50, 400, 80), spacebarImage);
+ 		var w = ((Screen.height*0.7)/tutorialImage.height) * tutorialImage.width;
+ 		var x = (Screen.width-w)/2;
+ 		GUI.Label (Rect (x, Screen.height*0.15, w, Screen.height*0.7), tutorialImage);
+ 		//GUI.Label (Rect (Screen.width/2-100, Screen.height/2+50, 400, 80), spacebarImage);
  	}
  	if (main.mode=="SPLASH") { 
  		var rw : float = 1.0*Screen.width/splashImage.width;
