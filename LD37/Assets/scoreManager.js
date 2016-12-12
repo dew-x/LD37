@@ -82,7 +82,7 @@ function OnGUI()
 	 		}
 	 	}
  		GUI.Label(Rect(xs+ws*0.72, Screen.height*0.19, ws*0.40, Screen.height*0.1), main.scoreTime.ToString("F3"),maxiStyle);
- 		GUI.Label(Rect(xs+ws*0.575, Screen.height*0.615, ws*0.20, Screen.height*0.05),main.scoreTime.ToString("F3"),miniStyle);
+ 		GUI.Label(Rect(xs+ws*0.550, Screen.height*0.615, ws*0.20, Screen.height*0.05),main.scoreTime.ToString("F3"),miniStyle);
  		if (data!="") {
  			var lines:String[] = data.Split("\n"[0]);
  			for (var i:int=0; i<lines.Length; ++i) {
