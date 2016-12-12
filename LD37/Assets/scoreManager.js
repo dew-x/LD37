@@ -69,20 +69,20 @@ function OnGUI()
 			UnityEngine.SceneManagement.SceneManager.LoadScene("main", UnityEngine.SceneManagement.LoadSceneMode.Single);
  		}
  		//GUI.Label (Rect (Screen.width/2-100, Screen.height/2+50, 400, 80), spacebarImag
- 		nick = GUI.TextField(Rect(xs+ws*0.1,Screen.height*0.62,ws*0.4,Screen.height*0.1),nick,12,nickStyle);
+ 		nick = GUI.TextField(Rect(xs+ws*0.085,Screen.height*0.61,ws*0.3,Screen.height*0.04),nick,12,nickStyle);
  		if (main.canUpload==true) { 
 	 		if (nick!="") {
-	 			if (GUI.Button(Rect (xs+ws*0.75, Screen.height*0.62, ws*0.15, Screen.height*0.05), submitButton1,submitStyle)) {
+	 			if (GUI.Button(Rect (xs+ws*0.75, Screen.height*0.61, ws*0.2, Screen.height*0.1), submitButton1,submitStyle)) {
 		 			todo = true;
 					www = new WWW("http://fmv.oqstats.net/g.php?nick="+nick+"&score="+main.scoreTime);
 					main.canUpload = false;
 		 		}
 	 		} else {
-	 			GUI.Label (Rect (xs+ws*0.75, Screen.height*0.62, ws*0.15, Screen.height*0.05), submitButton, submitStyle);
+	 			GUI.Label (Rect (xs+ws*0.75, Screen.height*0.61, ws*0.2, Screen.height*0.1), submitButton, submitStyle);
 	 		}
 	 	}
- 		GUI.Label(Rect(xs+ws*0.55, Screen.height*0.2, ws*0.40, Screen.height*0.1), ""+main.scoreTime,maxiStyle);
- 		GUI.Label(Rect(xs+ws*0.55, Screen.height*0.62, ws*0.20, Screen.height*0.05), ""+main.scoreTime,miniStyle);
+ 		GUI.Label(Rect(xs+ws*0.72, Screen.height*0.19, ws*0.40, Screen.height*0.1), main.scoreTime.ToString("F3"),maxiStyle);
+ 		GUI.Label(Rect(xs+ws*0.64, Screen.height*0.618, ws*0.20, Screen.height*0.05),main.scoreTime.ToString("F3"),miniStyle);
  		if (data!="") {
  			var lines:String[] = data.Split("\n"[0]);
  			for (var i:int=0; i<lines.Length; ++i) {
