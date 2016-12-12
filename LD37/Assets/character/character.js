@@ -6,6 +6,7 @@ static var rb : Rigidbody;
 var blockJump : int;
 var faseJump : int;
 var fix : float;
+var anim : Animator;
 
 function Start () {
 	Physics.gravity = Vector3(0,-100,0);
@@ -13,6 +14,7 @@ function Start () {
 	blockJump = 0;
 	faseJump = 0;
 	fix = 1.0f;
+	anim = GetComponent("Animator");
 }
 
 function Update () {
@@ -35,6 +37,7 @@ function Update () {
 			rb.AddForce(0,3000,0);
 			blockJump = 60;
 			++faseJump;
+			anim.Play("JUMP",Animator.StringToHash("layer"));
 		}
 		var vx = rb.velocity.x;
 		var vy = rb.velocity.z;
