@@ -52,10 +52,10 @@ function OnGUI()
  		var rh : float = 1.0*Screen.height/splashImage.height;
  		if (rw>rh) {
  			var nh : int = splashImage.height * rw;
- 			GUI.Label (Rect (0, Mathf.Floor((Screen.height-nh)/2), Screen.width, nh), splashImage);
+ 			GUI.Label (Rect (-10, Mathf.Floor((Screen.height-nh)/2)-10, Screen.width+20, nh+20), splashImage);
  		} else {
  			var nw : int = splashImage.width * rh;
- 			GUI.Label (Rect (Mathf.Floor((Screen.width-nw)/2), 0, nw, Screen.height), splashImage);
+ 			GUI.Label (Rect (Mathf.Floor((Screen.width-nw)/2)-10, -10, nw+20, Screen.height+20), splashImage);
  		}
  	}
  	if (main.mode=="HIGHSCORES") {
