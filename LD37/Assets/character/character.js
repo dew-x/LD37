@@ -19,6 +19,13 @@ function Start () {
 
 function Update () {
 	if (main.mode=="GAME") {
+		if (Time.timeScale>0.1) {
+			if (rb.velocity.y<-1) {
+				Time.timeScale = 0.7;
+			} else {
+				Time.timeScale = 1;
+			}
+		}
 		var x = 0;
 		var y = 0;
 		if (Input.GetKey("a") || Input.GetKey("left")) {
@@ -34,15 +41,15 @@ function Update () {
 			y -= 1;
 		}
 		if (Input.GetKeyDown("space") && blockJump<=0 && faseJump>=0) {
-			rb.AddForce(0,3000,0);
+			rb.AddForce(0,3000*fix,0);
 			blockJump = 60;
 			++faseJump;
 			anim.Play("JUMP",Animator.StringToHash("layer"));
 		}
 		var vx = rb.velocity.x;
 		var vy = rb.velocity.z;
-		var fx = (x*500);
-		var fy = (y*500);
+		var fx = (x*800);
+		var fy = (y*800);
 		if (Mathf.Sign(fx)==Mathf.Sign(vx)) fx = fx/Mathf.Max(1.0,vx*vx);
 		if (Mathf.Sign(fy)==Mathf.Sign(vy)) fy = fy/Mathf.Max(1.0,vy*vy);
 		rb.AddForce(fx*fix,0,fy*fix);
@@ -59,7 +66,7 @@ function OnCollisionStay(collision: Collision){
    }
    for (var contact : ContactPoint in collision.contacts) {
    		if (Mathf.Abs(contact.normal.z)>0.01) {
-			fix*=0.99f;
+			fix*=0.95f;
 		} else {
 			fix=1.0f;
 		}
