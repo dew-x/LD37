@@ -52,6 +52,14 @@ function OnGUI()
 			UnityEngine.SceneManagement.SceneManager.LoadScene("main", UnityEngine.SceneManagement.LoadSceneMode.Single);
  		}
  		//GUI.Label (Rect (Screen.width/2-100, Screen.height/2+50, 400, 80), spacebarImag
- 		nick = GUI.TextField(Rect(0,0,100,100),nick,12,nickStyle);
+ 		nick = GUI.TextField(Rect(xs+ws*0.1,Screen.height*0.62,ws*0.4,Screen.height*0.1),nick,12,nickStyle);
+ 		if (nick!="") {
+ 			if (GUI.Button(Rect (xs+ws*0.75, Screen.height*0.62, ws*0.15, Screen.height*0.05), submitButton1,submitStyle)) {
+	 			// TODO
+	 			Debug.Log("EIS");
+	 		}
+ 		} else {
+ 			GUI.Label (Rect (xs+ws*0.75, Screen.height*0.62, ws*0.15, Screen.height*0.05), submitButton, submitStyle);
+ 		}
  	}
 }
