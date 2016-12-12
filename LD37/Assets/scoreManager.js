@@ -4,6 +4,11 @@ var timeText : GameObject;
 
 var tutorialImage : Texture2D;
 var splashImage : Texture2D;
+var scoreImage : Texture2D;
+var playImage : Texture2D;
+var submitButton : Texture2D;
+var submitButton1 : Texture2D;
+
 
 function Start () 
 {
@@ -33,5 +38,9 @@ function OnGUI()
  		}
  	}
  	if (main.mode=="HIGHSCORES") {
+ 		var ws = ((Screen.height*0.7)/scoreImage.height) * scoreImage.width;
+ 		var xs = (Screen.width-ws)/2;
+ 		GUI.Label (Rect (xs, Screen.height*0.15, ws, Screen.height*0.7), scoreImage);
+ 		//GUI.Label (Rect (Screen.width/2-100, Screen.height/2+50, 400, 80), spacebarImag
  	}
 }
