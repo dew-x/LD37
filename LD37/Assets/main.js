@@ -11,6 +11,9 @@ static var mode : String = "SPLASH";
 static var canUpload : boolean;
 var ready = 0;
 
+var menuSong : AudioClip;
+var inGameSong : AudioClip;
+
 function Start () {
 	showSplash = true;
 	showTutorial = true;
@@ -20,6 +23,10 @@ function Start () {
 	timer = 0;
 	ready = 0;
 	canUpload = true;
+
+	var audio: AudioSource = GetComponent.<AudioSource>();
+	GetComponent.<AudioSource>().clip = menuSong;
+	GetComponent.<AudioSource>().Play();
 }
 
 function Update () {
@@ -33,6 +40,8 @@ function Update () {
 			mode = "GAME";
 			scoreTime = 0;
 			timer = 0;
+			GetComponent.<AudioSource>().clip = inGameSong;
+			GetComponent.<AudioSource>().Play();
 		}
 		++ready;
 	} else if (mode=="GAME") {
