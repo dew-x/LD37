@@ -15,10 +15,12 @@ var submitStyle : GUIStyle;
 var nickStyle : GUIStyle;
 var miniStyle : GUIStyle;
 var maxiStyle : GUIStyle;
+var snickStyle : GUIStyle;
+var sscoreStyle : GUIStyle;
 var nick : String;
 var www: WWW;
 var todo: boolean;
-var data;
+var data:String="";
 
 function Start () 
 {
@@ -29,7 +31,7 @@ function Start ()
 function Update() {
 	if (todo && www.isDone) {
 		todo = false;
-		data = JSON.Parse(www.text);
+		data = www.text;
 	}
 }
 
@@ -81,5 +83,21 @@ function OnGUI()
 	 	}
  		GUI.Label(Rect(xs+ws*0.55, Screen.height*0.2, ws*0.40, Screen.height*0.1), ""+main.scoreTime,maxiStyle);
  		GUI.Label(Rect(xs+ws*0.55, Screen.height*0.62, ws*0.20, Screen.height*0.05), ""+main.scoreTime,miniStyle);
+ 		if (data!="") {
+ 			var lines:String[] = data.Split("\n"[0]);
+ 			for (var i:int=0; i<lines.Length; ++i) {
+ 				var fields:String[] = lines[i].Split(","[0]);
+ 				var nicks = fields[0];
+ 				var scores = fields[1];
+ 				var r = i%5;
+ 				if (i<5) {
+ 					GUI.Label (Rect (xs+ws*0.1, Screen.height*(0.3+r*0.05), ws*0.15, Screen.height*0.05), nicks, snickStyle);
+ 					GUI.Label (Rect (xs+ws*0.3, Screen.height*(0.3+r*0.05), ws*0.15, Screen.height*0.05), scores, sscoreStyle);
+ 				} else {
+ 					GUI.Label (Rect (xs+ws*0.55, Screen.height*(0.3+r*0.05), ws*0.15, Screen.height*0.05), nicks, snickStyle);
+ 					GUI.Label (Rect (xs+ws*0.75, Screen.height*(0.3+r*0.05), ws*0.15, Screen.height*0.05), scores, sscoreStyle);
+ 				}
+ 			}
+ 		}
  	}
 }
