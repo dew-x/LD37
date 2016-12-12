@@ -13,9 +13,9 @@ function Start () {
 
 function Update () {
 	if (main.timer>2) {
-		transform.Rotate(Vector3.forward,main.timer/20*Time.timeScale);
+		transform.Rotate(Vector3.up,main.timer/20*Time.timeScale);
 	} else if (main.timer>0) {
-		transform.Rotate(Vector3.forward,Mathf.Sin(main.timer*20)/2*Time.timeScale);
+		transform.Rotate(Vector3.up,Mathf.Sin(main.timer*20)/2*Time.timeScale);
 	}
 	/*clockMesh = GetComponent.<MeshFilter>().mesh;
 	var clockBounds : Bounds = clockMesh.bounds;
