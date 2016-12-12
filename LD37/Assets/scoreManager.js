@@ -11,6 +11,8 @@ var submitButton1 : Texture2D;
 var playStyle : GUIStyle;
 var submitStyle : GUIStyle;
 var nickStyle : GUIStyle;
+var miniStyle : GUIStyle;
+var maxiStyle : GUIStyle;
 var nick : String;
 
 
@@ -61,5 +63,7 @@ function OnGUI()
  		} else {
  			GUI.Label (Rect (xs+ws*0.75, Screen.height*0.62, ws*0.15, Screen.height*0.05), submitButton, submitStyle);
  		}
+ 		GUI.Label(Rect(xs+ws*0.55, Screen.height*0.2, ws*0.40, Screen.height*0.1), ""+main.scoreTime,maxiStyle);
+ 		GUI.Label(Rect(xs+ws*0.55, Screen.height*0.62, ws*0.20, Screen.height*0.05), ""+main.scoreTime,miniStyle);
  	}
 }
