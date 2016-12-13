@@ -7,7 +7,7 @@ static var gameTime : float;
 static var scoreTime : float;
 static var deathTime : float;
 static var timer : float;
-static var mode : String = "SPLASH";
+static var mode : String = "TUTORIAL";
 static var canUpload : boolean;
 static var ts : float;
 var ready = 0;

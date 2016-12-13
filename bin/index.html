@@ -3,23 +3,35 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | LD37</title>
+    <title>Floor Is Lava | LD37</title>
     <style>
+	html,body {
+		padding:0px;
+		margin:0px;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+	}
     /* a style sheet needs to be present for cursor hiding and custom cursors to work. */
     </style>
   </head>
-  <body>
+  <body onload="update()" onresize="update()">
     <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="720px" width="1280px"></canvas>
     <script type='text/javascript'>
   var Module = {
     TOTAL_MEMORY: 268435456,
     errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
     compatibilitycheck: null,
-    dataUrl: "Release/build.data",
-    codeUrl: "Release/build.js",
-    memUrl: "Release/build.mem",
+    dataUrl: "Release/bin.data",
+    codeUrl: "Release/bin.js",
+    memUrl: "Release/bin.mem",
     
   };
+	function update() {
+		var cv = document.getElementById("canvas");
+		cv.width = window.innerWidth;
+		cv.height = window.innerHeight;
+	}
 </script>
 <script src="Release/UnityLoader.js"></script>
 

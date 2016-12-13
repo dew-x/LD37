@@ -3,7 +3,7 @@
 var character : GameObject;
 var shadow : GameObject;
 static var rb : Rigidbody;
-var blockJump : int;
+var blockJump : float;
 var faseJump : int;
 var fix : float;
 var anim : Animator;
@@ -55,7 +55,7 @@ function Update () {
 		rb.AddForce(fx*fix*Time.deltaTime*60,0,fy*fix*Time.deltaTime*60);
 
 		rb.AddForce(rb.velocity*-0.05*Time.deltaTime*60);
-		--blockJump;
+		blockJump-=Time.deltaTime*60;
 	}
 	shadow.transform.position = character.transform.position + Vector3(0,-1,0);
 }
